@@ -22,7 +22,7 @@ const HeroSec = () => {
         onSwiper={(swiper) => console.log(swiper)}>
         <SwiperSlide>
           <div className="bg-[url('/images/heroBg.jpg')]  bg-cover bg-no-repeat bg-top">
-            <div className="bg-black bg-opacity-80 h-screen flex items-center">
+            <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
                 <h1 className="text-5xl text-white">
                   Supercars <span className="text-[#ff7232]">Unleashed</span>{" "}
@@ -46,7 +46,7 @@ const HeroSec = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="bg-[url('/images/heroBg2.jpg')]  bg-cover bg-no-repeat bg-top">
-            <div className="bg-black bg-opacity-80 h-screen flex items-center">
+            <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
                 <h1 className="text-5xl text-white">
                   Adventure<span className="text-[#ff7232]"> on Four</span>{" "}
@@ -72,7 +72,7 @@ const HeroSec = () => {
         <SwiperSlide>
           {" "}
           <div className="bg-[url('/images/heroBg3.jpg')]  bg-cover bg-no-repeat bg-top">
-            <div className="bg-black bg-opacity-80 h-screen flex items-center">
+            <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
                 <h1 className="text-5xl text-white">
                   The Art of <span className="text-[#ff7232]"> Sports</span>
