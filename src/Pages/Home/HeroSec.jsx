@@ -24,10 +24,10 @@ const HeroSec = () => {
           <div className="bg-[url('/images/heroBg.jpg')]  bg-cover bg-no-repeat bg-top">
             <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
-                <h1 className="text-5xl text-white">
+                <h1 className="text-5xl text-white font-bold">
                   Supercars <span className="text-[#ff7232]">Unleashed</span>{" "}
                 </h1>
-                <p className="text-white px-32 pt-7">
+                <p className="text-white px-32 pt-7 font-bold">
                   Explore the world of supercars, where cutting-edge
                   engineering, high-speed capabilities, and jaw-dropping
                   aesthetics combine to create the ultimate driving experience.
@@ -37,7 +37,7 @@ const HeroSec = () => {
                   powerful than ever. Get behind the wheel of iconic models like
                   the Ford Mustang GT and Dodge Challenger Hellcat.
                 </p>
-                <button className="px-6 py-2 mt-7 bg-[#ff7232] text-white">
+                <button className="px-6 py-2 mt-7 font-bold bg-[#ff7232] text-white">
                   Read More
                 </button>
               </div>
@@ -48,11 +48,11 @@ const HeroSec = () => {
           <div className="bg-[url('/images/heroBg2.jpg')]  bg-cover bg-no-repeat bg-top">
             <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
-                <h1 className="text-5xl text-white">
+                <h1 className="text-5xl text-white font-bold">
                   Adventure<span className="text-[#ff7232]"> on Four</span>{" "}
                   Wheels
                 </h1>
-                <p className="text-white px-32 pt-7">
+                <p className="text-white lg:px-32 md:px-20 px-12 pt-7 font-bold">
                   Explore the rise of the SUV and its transformation from a
                   family hauler to an adventure-ready vehicle. From the
                   versatile Subaru Outback to the rugged Toyota 4Runner,
@@ -62,7 +62,7 @@ const HeroSec = () => {
                   Velar to the sleek Porsche Cayenne, these vehicles offer an
                   exquisite blend of style, performance, and comfort.
                 </p>
-                <button className="px-6 py-2 mt-7 bg-[#ff7232] text-white">
+                <button className="px-6 py-2 mt-7 font-bold bg-[#ff7232] text-white">
                   Read More
                 </button>
               </div>
@@ -74,10 +74,10 @@ const HeroSec = () => {
           <div className="bg-[url('/images/heroBg3.jpg')]  bg-cover bg-no-repeat bg-top">
             <div className="bg-black bg-opacity-75 h-screen flex items-center">
               <div className="text-center">
-                <h1 className="text-5xl text-white">
+                <h1 className="text-5xl text-white font-bold">
                   The Art of <span className="text-[#ff7232]"> Sports</span>
                 </h1>
-                <p className="text-white px-32 pt-7">
+                <p className="text-white lg:px-32 md:px-20 px-12 pt-7 font-bold">
                   Dive into the engineering and design principles that make
                   sports cars some of the most visually captivating and
                   aerodynamically efficient vehicles on the road. Discover how
@@ -86,7 +86,7 @@ const HeroSec = () => {
                   modern supercar landscape. This journey explores how these
                   high-performance vehicles have evolved over the years.
                 </p>
-                <button className="px-6 py-2 mt-7 bg-[#ff7232] text-white">
+                <button className="px-6 py-2 mt-7 font-bold bg-[#ff7232] text-white">
                   Read More
                 </button>
               </div>
