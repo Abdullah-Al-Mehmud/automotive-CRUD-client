@@ -17,9 +17,7 @@ const HeroSec = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}>
+        scrollbar={{ draggable: true }}>
         <SwiperSlide>
           <div className="bg-[url('/images/heroBg.jpg')]  bg-cover bg-no-repeat bg-top">
             <div className="bg-black bg-opacity-75 h-screen flex items-center">
