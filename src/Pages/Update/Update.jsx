@@ -1,4 +1,18 @@
+import { useLoaderData } from "react-router-dom";
+
 const Update = () => {
+  const product = useLoaderData();
+  const {
+    _id,
+    photo,
+    productName,
+    brandName,
+    carType,
+    price,
+    ratings,
+    description,
+  } = product;
+
   const handleUpdate = (e) => {
     e.preventDefault();
 
@@ -20,6 +34,18 @@ const Update = () => {
       ratings,
       description,
     };
+    // update in database
+    fetch(`http://localhost:3000/products1/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div className="bg-[#F4F3F0] text-center py-10 px-24">
@@ -27,7 +53,7 @@ const Update = () => {
         Update a <span className="text-[#ff7232]">Product</span>{" "}
       </h1>
       <div>
-        {/* name and quantity */}
+        {/* photo product */}
         <form onSubmit={handleUpdate} className="mt-10">
           <div className="md:flex  gap-5 ">
             <div className="md:w-1/2">
@@ -36,6 +62,7 @@ const Update = () => {
                 placeholder="Photo Url"
                 className="input input-bordered w-full "
                 name="photo"
+                defaultValue={photo}
               />
             </div>
             <div className="md:w-1/2">
@@ -44,15 +71,17 @@ const Update = () => {
                 placeholder="Product Name"
                 className="input input-bordered w-full "
                 name="productName"
+                defaultValue={productName}
               />
             </div>
           </div>
-          {/* supplier and taste */}
+          {/* brand name and car type */}
 
           <div className="md:flex mt-4 gap-5 ">
             <div className="md:w-1/2">
               <select
                 name="brandName"
+                defaultValue={brandName}
                 className="select select-bordered w-full ">
                 <option disabled defaultValue>
                   Choose Brand
@@ -66,7 +95,10 @@ const Update = () => {
               </select>
             </div>
             <div className="md:w-1/2">
-              <select name="carType" className="select select-bordered w-full ">
+              <select
+                name="carType"
+                defaultValue={carType}
+                className="select select-bordered w-full ">
                 <option disabled defaultValue>
                   Choose Car Type
                 </option>
@@ -78,7 +110,7 @@ const Update = () => {
             </div>
           </div>
 
-          {/* category and details */}
+          {/* price and ratings */}
 
           <div className="md:flex mt-4 gap-5 ">
             <div className="md:w-1/2">
@@ -87,6 +119,7 @@ const Update = () => {
                 placeholder="Enter Price"
                 className="input input-bordered w-full"
                 name="price"
+                defaultValue={price}
               />
             </div>
             <div className="md:w-1/2">
@@ -95,11 +128,12 @@ const Update = () => {
                 placeholder="Ratings Out of 5"
                 className="input input-bordered w-full"
                 name="ratings"
+                defaultValue={ratings}
               />
             </div>
           </div>
 
-          {/* Photo url */}
+          {/* description */}
 
           <div className="md:flex mt-4  gap-10 ">
             <div className="md:w-full">
@@ -108,6 +142,7 @@ const Update = () => {
                 placeholder="Description"
                 className="input input-bordered w-full"
                 name="description"
+                defaultValue={description}
               />
             </div>
           </div>
