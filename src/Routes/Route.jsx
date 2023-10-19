@@ -8,6 +8,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Details from "../Pages/Brands/BrandProducts/Products/Details";
 import LogIn from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
+import PrivetRoute from "./PrivetRoute";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCart",
-        element: <AddCart></AddCart>,
+        element: (
+          <PrivetRoute>
+            <AddCart></AddCart>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/myCart",
@@ -34,8 +40,14 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/products/${params.name}`),
       },
       {
-        path: "/brandProduct/:id",
-        element: <Details></Details>,
+        path: "/products1/:id",
+        element: (
+          <PrivetRoute>
+            <Details></Details>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/products1/${params.id}`),
       },
       {
         path: "/login",
@@ -44,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/update",
+        element: <Update></Update>,
       },
     ],
   },

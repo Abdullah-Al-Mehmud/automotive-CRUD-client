@@ -17,15 +17,17 @@ const ProductCars = ({ car }) => {
           <p className="text-lg font-bold">Price : {price}$</p>
           <p className="text-lg font-bold">Ratings : {ratings}</p>
           <div className="flex justify-around mt-4">
-            <Link to={`/brandProduct/${_id}`}>
+            <Link to={`/products1/${_id}`}>
               <button className="px-6 py-2 text-white bg-[#ff7232] font-bold">
                 Details
               </button>
             </Link>
 
-            <button className="px-6 py-2 text-white bg-[#ff7232] font-bold">
-              Update
-            </button>
+            <Link to="/update">
+              <button className="px-6 py-2 text-white bg-[#ff7232] font-bold">
+                Update
+              </button>
+            </Link>
           </div>
         </div>
       </div>

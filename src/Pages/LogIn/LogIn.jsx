@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const LogIn = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleLogin } = useContext(AuthContext);
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const handleLoginUser = (e) => {
     e.preventDefault();
 
@@ -22,8 +23,19 @@ const LogIn = () => {
         console.log(result);
         Swal.fire("Good job!", "Login Successful !!", "success");
         form.reset();
+        navigate("/");
       })
       .catch((error) => setError(error.message));
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(() => {
+        Swal.fire("Good job!", "Login Successful !!", "success");
+
+        navigate("/");
+      })
+      .catch();
   };
   return (
     <div className="bg-gray-900">
@@ -86,6 +98,15 @@ const LogIn = () => {
                       Register
                     </Link>
                   </p>
+                </div>
+                <h1 className="text-center font-bold">Also Login With</h1>
+                <div className="flex justify-center mt-4">
+                  <img
+                    onClick={handleGoogleLogin}
+                    className="h-10 cursor-pointer"
+                    src="/images/google.png"
+                    alt=""
+                  />
                 </div>
               </form>
             </div>
