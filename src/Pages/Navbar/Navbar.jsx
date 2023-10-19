@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOutUser } = useContext(AuthContext);
+
   const links = (
     <>
       <li>
@@ -35,6 +36,11 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogout = () => {
+    // logout user
+    logOutUser().then().catch();
+  };
   return (
     // <div className="navbar items-center bg-base-100">
 
@@ -71,22 +77,28 @@ const Navbar = () => {
         <div className="navbar-end ">
           {/*  */}
           {user ? (
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
-                </li>
-              </ul>
+            <div>
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img
+                      src={user?.photoURL ? user?.photoURL : "/images/user.png"}
+                    />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[2] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                  <li>
+                    <a className="font-bold">{user?.displayName}</a>
+                  </li>
+                  <li>
+                    <a className="font-bold" onClick={handleLogout}>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           ) : (
             <div className="flex gap-5">
