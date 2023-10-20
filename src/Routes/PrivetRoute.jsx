@@ -7,9 +7,11 @@ const PrivetRoute = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
 
   if (loader) {
-    <div className="flex h-screen justify-center items-center">
-      <span className="loading loading-spinner loading-lg"></span>
-    </div>;
+    return (
+      <div className="flex h-screen justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
   } else if (user) {
     return children;
   }

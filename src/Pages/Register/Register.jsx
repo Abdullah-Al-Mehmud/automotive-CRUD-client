@@ -19,6 +19,16 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, photo, email, password);
 
+    if (!/[A-Z]/.test(password)) {
+      setError("Must have one capital letter ");
+      return;
+    } else if (!/[^a-zA-Z0-9]/.test(password)) {
+      setError("Must contain special character");
+      return;
+    } else if (password.length < 6) {
+      setError("Must be upto 6 character");
+    }
+
     // create user
     createUser(email, password)
       .then((result) => {
