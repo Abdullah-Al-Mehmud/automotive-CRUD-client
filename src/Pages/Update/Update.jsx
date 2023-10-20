@@ -35,13 +35,16 @@ const Update = () => {
       description,
     };
     // update in database
-    fetch(`http://localhost:3000/products1/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/products1/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -153,7 +156,7 @@ const Update = () => {
           <div className="mt-5">
             <input
               type="submit"
-              value="Add Product"
+              value="Update Product"
               className="btn bg-[#ff7232] text-[white] text-lg font-bold btn-block"
             />
           </div>

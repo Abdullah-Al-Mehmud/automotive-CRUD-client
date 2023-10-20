@@ -16,9 +16,12 @@ const MyCartCard = ({ cart, myCart, setMyCart }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete cart form database
-        fetch(`http://localhost:3000/cart/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/cart/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

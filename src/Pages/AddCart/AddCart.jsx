@@ -23,13 +23,16 @@ const AddCart = () => {
     };
 
     // add products to database
-    fetch("http://localhost:3000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

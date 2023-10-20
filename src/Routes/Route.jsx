@@ -36,13 +36,18 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivetRoute>
         ),
-        loader: () => fetch("http://localhost:3000/cart"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/cart"
+          ),
       },
       {
         path: "/brandProduct/:name",
         element: <Products></Products>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.name}`),
+          fetch(
+            `https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/products/${params.name}`
+          ),
       },
       {
         path: "/products1/:id",
@@ -52,7 +57,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products1/${params.id}`),
+          fetch(
+            `https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/products1/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -70,7 +77,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products1/${params.id}`),
+          fetch(
+            `https://assignment-10-automotive-sever-cxnd7gcvd-mehmuds-projects.vercel.app/products1/${params.id}`
+          ),
       },
     ],
   },
