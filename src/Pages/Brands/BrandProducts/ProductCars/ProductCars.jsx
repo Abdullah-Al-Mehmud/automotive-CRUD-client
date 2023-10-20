@@ -23,7 +23,7 @@ const ProductCars = ({ car }) => {
               </button>
             </Link>
 
-            <Link to="/update">
+            <Link to={`/update/${_id}`}>
               <button className="px-6 py-2 text-white bg-[#ff7232] font-bold">
                 Update
               </button>

@@ -10,9 +10,7 @@ const PrivetRoute = ({ children }) => {
     <div className="flex h-screen justify-center items-center">
       <span className="loading loading-spinner loading-lg"></span>
     </div>;
-  }
-
-  if (user) {
+  } else if (user) {
     return children;
   }
   return <Navigate to="/login"></Navigate>;
