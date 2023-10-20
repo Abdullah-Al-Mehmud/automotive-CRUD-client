@@ -4,7 +4,7 @@ const Insurance = () => {
       <h1 className="text-center mb-10 text-4xl font-bold">
         Car <span className="text-[#ff7232]">Financing</span>
       </h1>
-      <div className="flex items-center">
+      <div className="md:flex items-center">
         <div className="w-fit">
           <img src="/images/insurance.jpg" alt="" />
         </div>

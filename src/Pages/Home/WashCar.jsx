@@ -4,7 +4,7 @@ const WashCar = () => {
       <h1 className="text-center mb-10 text-4xl font-bold">
         Car <span className="text-[#ff7232]">Maintenance</span>
       </h1>
-      <div className="flex items-center">
+      <div className="md:flex items-center">
         <div className="w-fit">
           <p className="px-10 font-bold">
             Regularly changing the engine oil and oil filter is crucial to
